@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fced05c0-d49c-417c-83ca-479fdc42d937" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/Main.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/slice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
+    <list default="true" id="fced05c0-d49c-417c-83ca-479fdc42d937" name="Changes" comment="feat: add toolkit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,17 +23,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IT-incubator/RN2&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\IT-incubator\\RN2\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/IT-incubator/RN2",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\IT-incubator\\RN2\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IT-incubator\RN2\src\redux" />
@@ -73,7 +69,8 @@
       <workItem from="1659811876220" duration="1934000" />
       <workItem from="1659813846298" duration="1006000" />
       <workItem from="1660038261099" duration="14989000" />
-      <workItem from="1660378024291" duration="4603000" />
+      <workItem from="1660378024291" duration="6169000" />
+      <workItem from="1660573906827" duration="4956000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1660067079724</created>
@@ -82,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660067079724</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: add toolkit">
+      <created>1660382737720</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660382737720</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +105,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="feat: add toolkit" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add toolkit" />
   </component>
 </project>

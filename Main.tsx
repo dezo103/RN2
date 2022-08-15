@@ -1,36 +1,37 @@
 import React from 'react';
-import {Animated, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {Animated, FlatList, ListRenderItem, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import Checkbox from "expo-checkbox";
-import {TaskType} from "./src/redux/slice";
-import {useAppSelector} from "./src/redux/store";
+import {addTaskAC, changeIsDoneAC, TaskType} from "./src/redux/slice";
+import {useAppDispatch, useAppSelector} from "./src/redux/store";
 
 
 export const Main = () => {
 
-    const task_ = useAppSelector(state => state.reducer.tasks)
+    const tasks = useAppSelector(state => state.reducer.tasks)
+    const dispatch = useAppDispatch()
 
-    const [task, setTask] = React.useState<TaskType[]>([
-        {
-            id: 1,
-            title: 'HTML',
-            isDone: true
-        },
-        {
-            id: 2,
-            title: 'CSS',
-            isDone: false
-        },
-        {
-            id: 3,
-            title: 'ReactNative',
-            isDone: false
-        },
-        {
-            id: 4,
-            title: 'React',
-            isDone: false
-        },
-    ])
+    // const [task, setTask] = React.useState<TaskType[]>([
+    //     {
+    //         id: 1,
+    //         title: 'HTML',
+    //         isDone: true
+    //     },
+    //     {
+    //         id: 2,
+    //         title: 'CSS',
+    //         isDone: false
+    //     },
+    //     {
+    //         id: 3,
+    //         title: 'ReactNative',
+    //         isDone: false
+    //     },
+    //     {
+    //         id: 4,
+    //         title: 'React',
+    //         isDone: false
+    //     },
+    // ])
 
     const [show, setShow] = React.useState(true)
     const [title, setTitle] = React.useState('')
@@ -63,37 +64,40 @@ export const Main = () => {
         }).start()
     }
 
-    const changeIsDone = (id: number, value: boolean) => {
-        setTask(task.map(task => task.id === id ? {...task, isDone: value} : task))
+    const changeIsDone = (id: number, isDone: boolean) => {
+        dispatch(changeIsDoneAC({id, isDone}))
+       // setTask(task.map(task => task.id === id ? {...task, isDone: value} : task))
     }
 
     const addTask = () => {
-        const newTask: TaskType = {
-            id: task.length + 1,
-            title,
-            isDone: false
-        }
-        setTask([...task, newTask])
+        dispatch(addTaskAC({title}))
         setTitle('')
         close()
+    }
+
+    const renderItem: ListRenderItem<TaskType> = ({item, index, separators})=> {
+        return (
+            <View key={item.id} style={styles.row}>
+                <Checkbox
+                    value={item.isDone}
+                    onValueChange={(value) => {
+                        changeIsDone(item.id, value)
+                    }}/>
+                <Text style={styles.text}>{item.title}</Text>
+            </View>
+        )
     }
 
     return (
         <>
             <View style={styles.container}>
                 <View>
-                    {task.map(el => {
-                        return (
-                            <View key={el.id} style={styles.row}>
-                                <Checkbox
-                                    value={el.isDone}
-                                    onValueChange={(value) => {
-                                        changeIsDone(el.id, value)
-                                    }}/>
-                                <Text style={styles.text}>{el.title}</Text>
-                            </View>
-                        )
-                    })}
+                    <FlatList
+                        data={tasks}
+                        renderItem={renderItem}
+                        keyExtractor={item => item.id.toString()}
+                        showsVerticalScrollIndicator={false}
+                    />
                 </View>
             </View>
             <Animated.View style={{...styles.containerAbsolute, bottom: -80, transform: [{translateY}]}}>
@@ -125,7 +129,7 @@ const styles = StyleSheet.create({
     container: {
         position: 'relative',
         flex: 1,
-        backgroundColor: '#080b1a',
+       // backgroundColor: '#080b1a',
         paddingHorizontal: 20,
         marginTop: 50
     },
